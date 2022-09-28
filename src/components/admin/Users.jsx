@@ -8,7 +8,7 @@ function Users({ users }) {
 
   const handleStatusDisable = async()=>{
     const { data } = await axios.put(
-      `sneakers-paradise-back-production.up.railway.app/users/${users._id}`,
+      `https://sneakers-paradise-back-production.up.railway.app/users/${users._id}`,
       {
         status: "Disabled"
       }
@@ -18,7 +18,7 @@ function Users({ users }) {
 
   const handleStatusEnable = async()=>{
     const { data } = await axios.put(
-      `sneakers-paradise-back-production.up.railway.app/users/${users._id}`,
+      `https://sneakers-paradise-back-production.up.railway.app/users/${users._id}`,
       {
         status: "Enabled"
       }
@@ -28,7 +28,7 @@ function Users({ users }) {
 
   const handleManager = async()=>{
     const { data } = await axios.put(
-      `sneakers-paradise-back-production.up.railway.app/users/${users._id}`,
+      `https://sneakers-paradise-back-production.up.railway.app/users/${users._id}`,
       {
         manager: users.manager === true ? false : true
       }

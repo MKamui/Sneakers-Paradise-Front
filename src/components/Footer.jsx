@@ -21,7 +21,7 @@ const Footer = () => {
       const handleSubmit = (e) => {
         e.preventDefault();
         Object.values(email)[0].includes("@")
-          ? axios.post(`sneakers-paradise-back-production.up.railway.app/mail/newsletter`, email) &&
+          ? axios.post(`https://sneakers-paradise-back-production.up.railway.app/mail/newsletter`, email) &&
           Swal.fire({
             icon: 'success',
             title: 'Thanks for subscribing!',

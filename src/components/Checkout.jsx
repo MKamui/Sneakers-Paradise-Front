@@ -139,7 +139,7 @@ function checkout({ products, subTotal }) {
           const { id } = paymentMethod;
           try {
             const { data } = await axios.post(
-              "sneakers-paradise-back-production.up.railway.app/cart/checkout",
+              "https://sneakers-paradise-back-production.up.railway.app/cart/checkout",
               {
                 id,
                 email: user.email,

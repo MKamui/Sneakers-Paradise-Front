@@ -11,7 +11,7 @@ function Clients({ clients }) {
   
   const handleStatus = async()=>{
       const { data } = await axios.put(
-      `sneakers-paradise-back-production.up.railway.app/cart/order/${clients.idPayment}`,
+      `https://sneakers-paradise-back-production.up.railway.app/cart/order/${clients.idPayment}`,
       {
         status: clients.status === "Pending" ? "Received" : "Pending"
       }

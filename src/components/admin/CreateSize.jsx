@@ -37,7 +37,7 @@ function CreateSize() {
             onSubmit={async(e, {resetForm})=>{
                 try{
                     const { data } = await axios.put(
-                        `sneakers-paradise-back-production.up.railway.app/shoes/addSize/${shoe[0]._id}`,
+                        `https://sneakers-paradise-back-production.up.railway.app/shoes/addSize/${shoe[0]._id}`,
                         {
                             size: e.size,
                             q:e.q

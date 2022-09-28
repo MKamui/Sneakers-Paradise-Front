@@ -70,7 +70,7 @@ function ModifShoe() {
           onSubmit={async (e, { resetForm }) => {
             try {
               const { data } = await axios.put(
-                `sneakers-paradise-back-production.up.railway.app/shoes/${shoe[0]._id}`,
+                `https://sneakers-paradise-back-production.up.railway.app/shoes/${shoe[0]._id}`,
                 {
                   brand: e.brand,
                   name: e.name,

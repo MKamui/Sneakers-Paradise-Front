@@ -76,7 +76,7 @@ function CreateShoes() {
                 
                 try{
                     const { data } = await axios.post(
-                        "sneakers-paradise-back-production.up.railway.app/shoes",
+                        "https://sneakers-paradise-back-production.up.railway.app/shoes",
                         {
                         brand: e.brand,
                         name: e.name,

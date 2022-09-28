@@ -28,7 +28,7 @@ function CreateBrand() {
                     resetForm();
                     
                     const { data } = await axios.post(
-                        "sneakers-paradise-back-production.up.railway.app/brands",
+                        "https://sneakers-paradise-back-production.up.railway.app/brands",
                         {
                             name: e.name    
                         })

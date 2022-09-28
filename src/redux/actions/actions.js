@@ -48,32 +48,32 @@ export const GET_ORDER_ID = "GET_ORDER_ID"
 
 
 export const getShoes = () => (dispatch)=>{
-    return axios('sneakers-paradise-back-production.up.railway.app/shoes')
+    return axios('https://sneakers-paradise-back-production.up.railway.app/shoes')
                     .then(res => dispatch({type: 'GET_SHOES', payload: res.data}))
 }
 
 export const getShoe = (id) => (dispatch)=>{
-    return axios(`sneakers-paradise-back-production.up.railway.app/shoes/${id}`)
+    return axios(`https://sneakers-paradise-back-production.up.railway.app/shoes/${id}`)
                     .then(res => dispatch({type: 'GET_SHOE', payload: res.data}))
 }
 
 export const getOnSale = () => (dispatch)=>{
-    return axios("sneakers-paradise-back-production.up.railway.app/shoes/onSale")
+    return axios("https://sneakers-paradise-back-production.up.railway.app/shoes/onSale")
         .then(res=> dispatch({type: "GET_ONSALE", payload: res.data}))
 }
 
 export const getBrands = () => (dispatch)=>{
-    return axios(`sneakers-paradise-back-production.up.railway.app/brands`)
+    return axios(`https://sneakers-paradise-back-production.up.railway.app/brands`)
                     .then(res => dispatch({type: 'GET_BRANDS', payload: res.data})) 
 }
 
 export const getByName = (name) => (dispatch)=>{
-    return axios(`sneakers-paradise-back-production.up.railway.app/shoes?name=${name}`)
+    return axios(`https://sneakers-paradise-back-production.up.railway.app/shoes?name=${name}`)
                     .then(res => dispatch({type: 'GET_BY_NAME', payload: res.data})) 
 }
 
 export const getByCatalogBrand = (brand) => (dispatch)=>{
-    return axios(`sneakers-paradise-back-production.up.railway.app/shoes?brand=${brand}`)
+    return axios(`https://sneakers-paradise-back-production.up.railway.app/shoes?brand=${brand}`)
                     .then(res => dispatch({type: 'GET_BY_CATALOG_BRAND', payload: res.data})) 
 }
 
@@ -105,7 +105,7 @@ export const getByColor = (value) => {
 export function postUser(value) {
     return async function (dispatch) {
         const create = await axios.post(
-            `sneakers-paradise-back-production.up.railway.app/users`,
+            `https://sneakers-paradise-back-production.up.railway.app/users`,
             value
         );
         return dispatch({
@@ -180,12 +180,12 @@ function localStorageCarrito(data, add) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const getUsers = () => (dispatch)=>{
-    return axios('sneakers-paradise-back-production.up.railway.app/users')
+    return axios('https://sneakers-paradise-back-production.up.railway.app/users')
                     .then(res => dispatch({type: 'GET_USERS', payload: res.data}))
 }
 
 export const getClients = () => (dispatch)=>{
-    return axios('sneakers-paradise-back-production.up.railway.app/cart')
+    return axios('https://sneakers-paradise-back-production.up.railway.app/cart')
                     .then(res => dispatch({type: 'GET_CLIENTS', payload: res.data}))
 }
 
@@ -225,18 +225,18 @@ export const deleteBrand = (brand)=>{
 
 
 export const getReviews = (shoeId) => (dispatch)=>{
-    return axios(`sneakers-paradise-back-production.up.railway.app/reviews/${shoeId}`)
+    return axios(`https://sneakers-paradise-back-production.up.railway.app/reviews/${shoeId}`)
         .then(res => dispatch({type: 'GET_REVIEWS', payload: res.data}))
 }
 
 export const getExactReview = (shoeId, idUser) => (dispatch) => {
-    return axios(`sneakers-paradise-back-production.up.railway.app/reviews/${shoeId}`, {idUser : idUser})
+    return axios(`https://sneakers-paradise-back-production.up.railway.app/reviews/${shoeId}`, {idUser : idUser})
         .then(res => dispatch({type: 'GET_EXACT_REVIEW', payload: res.data}))
 }
 
 export function postReview(idUser, review, rating, shoeId) {
     return async function (dispatch) {
-    const create = axios.post(`sneakers-paradise-back-production.up.railway.app/reviews/${shoeId}`, { idUser: idUser, review: review, rating: rating })
+    const create = axios.post(`https://sneakers-paradise-back-production.up.railway.app/reviews/${shoeId}`, { idUser: idUser, review: review, rating: rating })
         return dispatch({
         type: 'POST_REVIEW',
         payload: create,
@@ -245,12 +245,12 @@ export function postReview(idUser, review, rating, shoeId) {
 }
 
 export const editReview = (idReview, review, rating) => (dispatch) =>{
-    return axios.put(`sneakers-paradise-back-production.up.railway.app/reviews/exact/${idReview}`, {review, rating })
+    return axios.put(`https://sneakers-paradise-back-production.up.railway.app/reviews/exact/${idReview}`, {review, rating })
     .then(res => dispatch({type: 'EDIT_REVIEW', payload: res.data}))
 }
 
 export const deleteReview = (idReview) => (dispatch) => {
-    return axios.delete(`sneakers-paradise-back-production.up.railway.app/reviews/exact/${idReview}`)
+    return axios.delete(`https://sneakers-paradise-back-production.up.railway.app/reviews/exact/${idReview}`)
     .then(res => dispatch({type: 'DELETE_REVIEW', payload: {}}))
 }
 
@@ -263,13 +263,13 @@ return {
 ////////////////////////////////////////////////////////////////////////////
 
 export const getFavorites = (idUser) => (dispatch)=>{
-    return axios(`sneakers-paradise-back-production.up.railway.app/favorites/${idUser}`)
+    return axios(`https://sneakers-paradise-back-production.up.railway.app/favorites/${idUser}`)
     .then(res => dispatch({type: 'GET_FAVORITES', payload: res.data}))
 }
 
 export function postFavorite(idUser, shoeId) {
     return async function (dispatch) {
-    const create = axios.post(`sneakers-paradise-back-production.up.railway.app/favorites/${idUser}`, { shoeId: shoeId })
+    const create = axios.post(`https://sneakers-paradise-back-production.up.railway.app/favorites/${idUser}`, { shoeId: shoeId })
         return dispatch({
         type: 'POST_FAVORITES',
         payload: create,
@@ -278,18 +278,18 @@ export function postFavorite(idUser, shoeId) {
 }
 
 export const deleteFavorite = (idUser, shoeId) => (dispatch) => {
-    return axios.delete(`sneakers-paradise-back-production.up.railway.app/favorites/${idUser}`, { data: {shoeId} })
+    return axios.delete(`https://sneakers-paradise-back-production.up.railway.app/favorites/${idUser}`, { data: {shoeId} })
     .then(res => dispatch({type: 'DELETE_FAVORITES', payload: {}}))
 }
 
 //////////////////////////////////////////////////////////////////////////////
 
 export const getOrders = (email) => (dispatch) => {
- return axios(`sneakers-paradise-back-production.up.railway.app/cart/${email}`)
+ return axios(`https://sneakers-paradise-back-production.up.railway.app/cart/${email}`)
  .then(res => dispatch({type: 'GET_USER_ORDERS', payload: res.data}))
 }
 
 export const getOrderId = (idPayment) => (dispatch) => {
- return axios(`sneakers-paradise-back-production.up.railway.app/cart/order/${idPayment}`)
+ return axios(`https://sneakers-paradise-back-production.up.railway.app/cart/order/${idPayment}`)
  .then(res => dispatch({type: 'GET_ORDER_ID', payload: res.data}))
 }
