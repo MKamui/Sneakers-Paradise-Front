@@ -22,7 +22,7 @@ function Products({ products }) {
     if (result.isConfirmed) { 
         dispatch(deleteShoe(products._id));
         await axios.delete(
-          `https://sneakers-back-end.herokuapp.com/shoes/${products._id}`
+          `sneakers-paradise-back-production.up.railway.app/shoes/${products._id}`
         );
       Swal.fire(
         'Deleted!',
@@ -35,7 +35,7 @@ function Products({ products }) {
 
 const handleOnSale = async()=>{
   const { data } = await axios.put(
-    `https://sneakers-back-end.herokuapp.com/admin/onsale/${products._id}`,
+    `sneakers-paradise-back-production.up.railway.app/admin/onsale/${products._id}`,
     {
       onSale: products.onSale === true ? false : true
     }

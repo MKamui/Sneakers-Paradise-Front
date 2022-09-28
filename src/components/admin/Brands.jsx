@@ -20,7 +20,7 @@ function Brands({ brands }) {
     if (result.isConfirmed) { 
         dispatch(deleteBrand(brands._id));
         await axios.delete(
-          `https://sneakers-back-end.herokuapp.com/brands/${brands._id}`
+          `sneakers-paradise-back-production.up.railway.app/brands/${brands._id}`
         );
       Swal.fire(
         'Deleted!',
